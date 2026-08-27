@@ -1,16 +1,39 @@
-# React + Vite
+# 💻 Frontend - Ayush Narayan Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The client-side single-page application for Ayush Narayan's personal developer portfolio, built with **React (Vite)** and styled using **Tailwind CSS**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Tech Stack & Libraries
 
-## React Compiler
+- **Framework:** [React 18](https://react.dev/)
+- **Build Tool:** [Vite](https://vitejs.dev/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📂 Folder Structure
+
+```text
+client/
+├── public/                     # Static assets (images, CV PDF)
+│   ├── about-anime.png         # About section profile picture
+│   ├── profile.png             # Hero section profile picture
+│   └── Ayush_Narayan_CV.pdf    # Downloadable resume
+├── src/
+│   ├── components/
+│   │   ├── Navbar.jsx          # Header navigation bar
+│   │   ├── Hero.jsx            # Hero banner with intro & actions
+│   │   ├── About.jsx           # Bio, highlights & work ethic cards
+│   │   ├── Projects.jsx        # Project showcases & GitHub/live links
+│   │   ├── Skills.jsx          # Tech stack & tool badges
+│   │   ├── Education.jsx       # Academic & internship timelines
+│   │   ├── Certificates.jsx    # Verified certifications
+│   │   └── Contact.jsx         # Contact form with backend API integration
+│   ├── App.jsx                 # Main application layout
+│   ├── main.jsx                # Application root rendering
+│   └── index.css               # Tailwind directives & base styles
+├── index.html                  # HTML template
+├── tailwind.config.js          # Tailwind styling configuration
+└── vite.config.js              # Vite configuration
