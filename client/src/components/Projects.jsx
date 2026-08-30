@@ -16,11 +16,11 @@ const projects = [
     live: "https://theayushcode.github.io/Scientific-calculator/"
   },
   {
-    title: "Python Data Analysis Toolkit",
-    description: "Data analysis scripts and basic data processing workflows developed during NIELIT training.",
-    tech: ["Python", "Pandas", "NumPy", "Data Science"],
+    title: "Kishan Tech",
+    description: "Kishan Tech — A full-stack agriculture web application designed for Indian farmers and agri-students. It helps users find suitable crops based on season and soil type, check live weather forecasts and mandi prices, save favorite crops, and interact through a farmer discussion forum. Built using HTML, CSS, JavaScript, Node.js, Express.js, MySQL, and REST APIs.",
+    tech: ["HTML5", "CSS3", "JavaScript", "Node.js", "Express.js", "MySQL", "REST APIs"],
     github: "https://github.com/theayushcode",
-    live: "#"
+    live: "https://kishan-tech-l2x3curnd-ayush-narayan-s-projects.vercel.app/"
   }
 ];
 
