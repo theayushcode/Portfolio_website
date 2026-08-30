@@ -11,9 +11,9 @@ const projects = [
   {
     title: "Scientific Calculator Web App",
     description: "A responsive standard & scientific calculator supporting arithmetic calculations and keyboard inputs.",
-    tech: ["JavaScript", "HTML5", "CSS3", "Vite"],
+    tech: ["JavaScript", "HTML5", "CSS3"],
     github: "https://github.com/theayushcode",
-    live: "https://theayushcode.github.io/My_portfolio/"
+    live: "https://theayushcode.github.io/Scientific-calculator/"
   },
   {
     title: "Python Data Analysis Toolkit",
