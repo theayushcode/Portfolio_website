@@ -2,11 +2,15 @@ import React from 'react';
 import { Award, CheckCircle2 } from 'lucide-react';
 
 const certs = [
+  
+  { name: "C Training", issuer: "Spoken Tutorial" },
   { name: "Python Training", issuer: "Spoken Tutorial" },
-  { name: "C Programming Training", issuer: "Spoken Tutorial" },
-  { name: "C++ Programming Training", issuer: "Spoken Tutorial" },
+  { name: "CSS Training", issuer: "Spoken Tutorial" },
   { name: "Java Programming Training", issuer: "Spoken Tutorial" },
-  { name: "AI For All", issuer: "NPTEL Swayam (Indian Talent Network)" }
+  { name: "AI For All", issuer: "My Bharat" },
+  { name: "Nasha Mukt Bharat", issuer: "My Bharat" },
+  { name: "Weather Forecasting", issuer: "My Bharat" },
+  { name: "Bharatiya Gyan Quiz On Art & Aesthetics", issuer: "My Bharat" }
 ];
 
 export default function Certificates() {
