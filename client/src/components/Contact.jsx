@@ -1,29 +1,44 @@
 import React, { useState } from 'react';
-import { Mail, Send } from 'lucide-react';
+import { Mail, Send, CheckCircle2, AlertCircle } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus('Sending...');
+    setLoading(true);
+    setStatus('Sending message...');
 
     try {
-      const res = await fetch('https://portfolio-website-loed.onrender.com/api/contact', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify(formData)
-});
-      const data = await res.json();
-      if (res.ok) {
-        setStatus('Message sent successfully!');
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "9e8246b2-7415-407b-986b-a75a5b6d8af4",
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `New Portfolio Message from ${formData.name}`,
+          from_name: "Ayush Portfolio",
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setStatus('Message sent successfully! I will get back to you soon.');
         setFormData({ name: '', email: '', message: '' });
       } else {
-        setStatus(data.error || 'Failed to send.');
+        setStatus('Failed to send message. Please try again.');
       }
-    } catch {
-      setStatus('Could not connect to server.');
+    } catch (err) {
+      setStatus('Could not send message. Check internet connection.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -58,7 +73,7 @@ export default function Contact() {
       </div>
 
       {/* Form */}
-      <div className="max-w-xl mx-auto bg-[#0e131f] border border-cyan-950/60 p-8 rounded-3xl">
+      <div className="max-w-xl mx-auto bg-[#0e131f] border border-cyan-950/60 p-8 rounded-3xl shadow-xl">
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <div>
             <label className="text-xs text-zinc-400 block mb-1">Your Name</label>
@@ -68,6 +83,7 @@ export default function Contact() {
               className="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl focus:border-cyan-400 focus:outline-none text-white text-sm"
               value={formData.name}
               onChange={(e) => setFormData({...formData, name: e.target.value})}
+              placeholder="e.g. John Doe"
             />
           </div>
           <div>
@@ -78,6 +94,7 @@ export default function Contact() {
               className="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl focus:border-cyan-400 focus:outline-none text-white text-sm"
               value={formData.email}
               onChange={(e) => setFormData({...formData, email: e.target.value})}
+              placeholder="john@example.com"
             />
           </div>
           <div>
@@ -85,15 +102,25 @@ export default function Contact() {
             <textarea 
               rows={4}
               required
-              className="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl focus:border-cyan-400 focus:outline-none text-white text-sm"
+              className="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl focus:border-cyan-400 focus:outline-none text-white text-sm resize-none"
               value={formData.message}
               onChange={(e) => setFormData({...formData, message: e.target.value})}
+              placeholder="Write your message here..."
             />
           </div>
-          <button type="submit" className="flex items-center justify-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold py-3.5 rounded-xl transition mt-2">
-            Send Message <Send size={16} />
+          <button 
+            type="submit" 
+            disabled={loading}
+            className="flex items-center justify-center gap-2 bg-cyan-500 hover:bg-cyan-400 disabled:opacity-50 text-slate-950 font-bold py-3.5 rounded-xl transition mt-2 cursor-pointer shadow-lg shadow-cyan-500/20"
+          >
+            {loading ? 'Sending...' : 'Send Message'} <Send size={16} />
           </button>
-          {status && <p className="text-center text-xs text-cyan-400 mt-2">{status}</p>}
+          {status && (
+            <p className="text-center text-xs text-cyan-400 mt-2 flex items-center justify-center gap-1.5 font-medium">
+              {status.includes('successfully') ? <CheckCircle2 size={15} /> : <AlertCircle size={15} />}
+              {status}
+            </p>
+          )}
         </form>
       </div>
     </section>

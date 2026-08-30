@@ -22,6 +22,9 @@ export default function App() {
         <Contact />
       </main>
       <footer className="py-10 text-center text-xs text-zinc-600 border-t border-zinc-900">
+        <p className="font-medium text-zinc-300">
+          Made with 💕 by <span className="text-cyan-400 font-semibold">Ayush Narayan</span>
+        </p>
         © {new Date().getFullYear()} Ayush Narayan. All rights reserved.
       </footer>
     </div>
