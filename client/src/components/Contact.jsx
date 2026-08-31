@@ -83,7 +83,7 @@ export default function Contact() {
               className="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl focus:border-cyan-400 focus:outline-none text-white text-sm"
               value={formData.name}
               onChange={(e) => setFormData({...formData, name: e.target.value})}
-              placeholder="e.g. John Doe"
+              placeholder="Enter Your Name"
             />
           </div>
           <div>
@@ -94,7 +94,7 @@ export default function Contact() {
               className="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-xl focus:border-cyan-400 focus:outline-none text-white text-sm"
               value={formData.email}
               onChange={(e) => setFormData({...formData, email: e.target.value})}
-              placeholder="john@example.com"
+              placeholder="Enter Your mail"
             />
           </div>
           <div>
