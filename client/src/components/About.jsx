@@ -30,7 +30,7 @@ export default function About() {
         <div className="lg:col-span-7">
           <h3 className="text-3xl font-bold text-white mb-4">Frontend Developer</h3>
           <p className="text-zinc-400 leading-relaxed mb-8">
-            Hey, my name is <span className="text-white font-medium">Ayush Narayan</span>, a motivated Computer Science Diploma student with hands-on foundational experience in React, JavaScript, HTML, CSS, and modern web tools[cite: 1]. As a fresher, I bring strong problem-solving skills, enthusiasm for frontend engineering, and eagerness to contribute to high-impact projects.
+            Hey, my name is <span className="text-white font-medium">Ayush Narayan</span>, a motivated Computer Science Diploma student with hands-on foundational experience in React, JavaScript, HTML, CSS, and modern web tools. As a fresher, I bring strong problem-solving skills, enthusiasm for frontend engineering, and eagerness to contribute to high-impact projects.
           </p>
 
           <div className="grid sm:grid-cols-2 gap-4">
