@@ -15,7 +15,7 @@ export default function Navbar() {
           <a href="#projects" className="hover:text-cyan-400 transition">Projects</a>
           <a href="#skills" className="hover:text-cyan-400 transition">Skills</a>
           <a href="#education" className="hover:text-cyan-400 transition">Education</a>
-          <a href="#certificates" className="hover:text-cyan-400 transition">Certificates</a>
+          {/* <a href="#certificates" className="hover:text-cyan-400 transition">Certificates</a> */}
           <a href="#contact" className="hover:text-cyan-400 transition">Contact</a>
         </div>
 

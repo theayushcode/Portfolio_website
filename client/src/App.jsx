@@ -18,7 +18,7 @@ export default function App() {
         <Projects />
         <Skills />
         <Education />
-        <Certificates />
+        {/* <Certificates /> */}
         <Contact />
       </main>
       <footer className="py-10 text-center text-xs text-zinc-600 border-t border-zinc-900">
